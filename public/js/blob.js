@@ -16,6 +16,10 @@ function Blob(w, h, r) {
     };
 
 
+    this.constrain = function () {
+        blob.pos.x = constrain(blob.pos.x, -width / 4, width / 4);
+        blob.pos.y = constrain(blob.pos.y, -height / 4, height / 4);
+    };
 
     this.eats = function (other) {
         var dist = p5.Vector.dist(this.pos, other.pos);
